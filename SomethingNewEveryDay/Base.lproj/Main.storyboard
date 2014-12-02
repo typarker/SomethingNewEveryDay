@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-148" y="64"/>
         </scene>
-        <!--Something New View Controller-->
+        <!--Somthing New View Controller-->
         <scene sceneID="Otv-e8-ljg">
             <objects>
-                <viewController id="cBO-1q-FEK" customClass="SomethingNewViewController" customModule="SomethingNewEveryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cBO-1q-FEK" customClass="SomthingNewViewController" customModule="SomethingNewEveryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2f5-n2-H0X"/>
                         <viewControllerLayoutGuide type="bottom" id="NiN-ZT-dbb"/>
@@ -41,21 +41,29 @@
                                 <rect key="frame" x="41" y="234" width="536" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mEh-ev-p5e" id="kRn-1j-gW8"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg9-Tr-U9I">
-                                <rect key="frame" x="277" y="318" width="46" height="30"/>
+                                <rect key="frame" x="277" y="440" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="button:" destination="cBO-1q-FEK" eventType="touchUpInside" id="LOB-ST-zk7"/>
+                                    <action selector="submitButton:" destination="cBO-1q-FEK" eventType="touchUpInside" id="IQo-QS-WWD"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="81M-bK-NOE">
+                                <rect key="frame" x="183" y="363" width="234" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="textField" destination="gJA-02-iX3" id="eyK-89-Kpw"/>
+                        <outlet property="accomplishedBar" destination="81M-bK-NOE" id="nFi-7R-R8W"/>
+                        <outlet property="textField" destination="gJA-02-iX3" id="Hw7-rO-Q7D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yl9-ig-wHU" userLabel="First Responder" sceneMemberID="firstResponder"/>

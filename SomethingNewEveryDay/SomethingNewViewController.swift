@@ -9,21 +9,12 @@
 import UIKit
 
 
-class SomethingNewViewController: UIViewController {
+class SomethingNewViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
 
     @IBAction func button(sender: AnyObject) {
         
-        //var user = PFUser.currentUser()
-        var somethingNew = PFObject(className: "SomethingNew")
-        somethingNew.setObject(self.textField.text, forKey: "learned")
-        somethingNew.saveInBackgroundWithBlock {
-            (success: Bool!, error: NSError!) -> Void in
-            if true {
-                NSLog("Object created with id: \(somethingNew.objectId)")
-            } else {
-                NSLog("%@", error)
-            }
+        
     }
     
 }
