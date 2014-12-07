@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
          Parse.setApplicationId("WR2NI87dRobP5rWGFM6SYODokuOotFP6cK3ITEnp", clientKey: "YOeXzOE2NgQeGXcdbcyNxo4gaGjtlKJrdikxuYOa")
-        /*let navigationController = self.window!.rootViewController as UINavigationController
-        let controller = navigationController.topViewController as MasterViewController
-        controller.managedObjectContext = self.managedObjectContext*/
+        //let navigationController = self.window!.rootViewController as UINavigationController
+        //let controller = navigationController.topViewController as MasterViewController
+        //controller.managedObjectContext = self.managedObjectContext
         return true
     }
 
