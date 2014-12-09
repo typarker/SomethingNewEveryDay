@@ -17,7 +17,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     func loadData(){
         
         var query = PFQuery(className:"SomethingNew")
-        //query.whereKey("spots", greaterThan: 0)
+        //query.whereKey("user", greaterThan: 0)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
@@ -27,7 +27,8 @@ class WhatsBeenDoneTableViewController: UITableViewController {
                 for object in objects {
                     NSLog("%@", object.objectId)
                     //let latitude = object["latitude"] as Double
-                    self.dataParse.addObject(object)                    }
+                    self.dataParse.addObject(object)
+                }
             } else {
                 // Log details of the failure
                 NSLog("Error: %@ %@", error, error.userInfo!)
@@ -39,7 +40,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadData()
+        loadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -63,7 +64,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        loadData()
+        //loadData()
         return self.dataParse.count;
         
        // return self.tableData.count;
