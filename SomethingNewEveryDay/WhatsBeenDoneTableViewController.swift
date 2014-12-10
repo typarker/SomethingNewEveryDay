@@ -10,11 +10,12 @@ import UIKit
 
 class WhatsBeenDoneTableViewController: UITableViewController {
     
-    let tableData = ["One","Two","Three"]
     
     var dataParse:NSMutableArray = NSMutableArray()
     
-    func loadData(){
+    
+    
+    func loadData() {
         
         var query = PFQuery(className:"SomethingNew")
         //query.whereKey("user", greaterThan: 0)
@@ -33,14 +34,18 @@ class WhatsBeenDoneTableViewController: UITableViewController {
                 // Log details of the failure
                 NSLog("Error: %@ %@", error, error.userInfo!)
             }
+            self.tableView.reloadData()
         }
-       
+
     }
+   
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -65,9 +70,9 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         //loadData()
-        return self.dataParse.count;
+        return self.dataParse.count
         
-       // return self.tableData.count;
+     
     }
 
     

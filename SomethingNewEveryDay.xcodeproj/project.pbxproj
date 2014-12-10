@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A00177001A31350D00369A23 /* WhBeenDoneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00176FF1A31350D00369A23 /* WhBeenDoneTableViewController.swift */; };
+		A00177001A31350D00369A23 /* bleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00176FF1A31350D00369A23 /* bleViewController.swift */; };
 		A00177351A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */; };
 		A03E748A1A2D4AB00042461B /* SomthingNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */; };
 		A06B8B141A290F60003F3073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B8B131A290F60003F3073 /* AppDelegate.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A00176FF1A31350D00369A23 /* WhBeenDoneTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhBeenDoneTableViewController.swift; sourceTree = "<group>"; };
+		A00176FF1A31350D00369A23 /* bleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bleViewController.swift; sourceTree = "<group>"; };
 		A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsBeenDoneTableViewController.swift; sourceTree = "<group>"; };
 		A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomthingNewViewController.swift; sourceTree = "<group>"; };
 		A06B8B0E1A290F60003F3073 /* SomethingNewEveryDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomethingNewEveryDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +151,7 @@
 				A06B8B181A290F60003F3073 /* MasterViewController.swift */,
 				A06B8B1A1A290F60003F3073 /* DetailViewController.swift */,
 				A06B8B1C1A290F60003F3073 /* Main.storyboard */,
-				A00176FF1A31350D00369A23 /* WhBeenDoneTableViewController.swift */,
+				A00176FF1A31350D00369A23 /* bleViewController.swift */,
 				A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */,
 				A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */,
 				A06B8B1F1A290F60003F3073 /* Images.xcassets */,
@@ -296,7 +296,7 @@
 				A06B8B561A2918E9003F3073 /* hopefulHeader.m in Sources */,
 				A06B8B191A290F60003F3073 /* MasterViewController.swift in Sources */,
 				A06B8B1B1A290F60003F3073 /* DetailViewController.swift in Sources */,
-				A00177001A31350D00369A23 /* WhBeenDoneTableViewController.swift in Sources */,
+				A00177001A31350D00369A23 /* bleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

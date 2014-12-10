@@ -16,6 +16,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     override func viewDidLoad() {
