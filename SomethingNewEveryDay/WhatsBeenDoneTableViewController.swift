@@ -19,6 +19,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         
         var query = PFQuery(className:"SomethingNew")
         //query.whereKey("user", greaterThan: 0)
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
