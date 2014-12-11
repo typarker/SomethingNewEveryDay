@@ -18,7 +18,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     func loadData() {
         
         var query = PFQuery(className:"SomethingNew")
-        //query.whereKey("user", greaterThan: 0)
+        query.whereKey("show", equalTo: 1)
         query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
@@ -102,8 +102,24 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            dataParse.removeObjectAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            let selectedId = self.dataParse[indexPath.row].objectId
+            var query = PFQuery(className:"SomethingNew")
+            query.getObjectInBackgroundWithId(selectedId) {
+                (somethingNew: PFObject!, error: NSError!) -> Void in
+                if error != nil {
+                    NSLog("%@", error)
+                }
+                else {
+                    somethingNew.incrementKey("show", byAmount: -1)
+                    somethingNew.saveInBackground()
+                }
+            }
+
+            
+            dataParse.removeObjectAtIndex(indexPath.row) //removes from local array
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic) //deletes row
+            
         }
     }
     

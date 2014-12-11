@@ -16,6 +16,7 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate{
         //var user = PFUser.currentUser()
         var somethingNew = PFObject(className: "SomethingNew")
         somethingNew.setObject(self.textField.text, forKey: "learned")
+        somethingNew.setObject(1, forKey: "show")
         somethingNew.setObject(self.accomplishedBar.value, forKey: "accomplished")
         somethingNew.saveInBackgroundWithBlock {
             (success: Bool!, error: NSError!) -> Void in
