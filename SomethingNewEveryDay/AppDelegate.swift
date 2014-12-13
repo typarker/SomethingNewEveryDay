@@ -18,10 +18,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
          Parse.setApplicationId("WR2NI87dRobP5rWGFM6SYODokuOotFP6cK3ITEnp", clientKey: "YOeXzOE2NgQeGXcdbcyNxo4gaGjtlKJrdikxuYOa")
-        //let navigationController = self.window!.rootViewController as UINavigationController
-        //let controller = navigationController.topViewController as MasterViewController
-        //controller.managedObjectContext = self.managedObjectContext
+        
+        // Push通知を許可する
+        var types: UIUserNotificationType = UIUserNotificationType.Badge |
+            UIUserNotificationType.Alert |
+            UIUserNotificationType.Sound
+        
+        var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
+        
+        application.registerUserNotificationSettings( settings )
+        application.registerForRemoteNotifications()
+
+      
         return true
+    }
+    
+    //something from github
+    
+    func application( application: UIApplication!, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData! ) {
+        
+        // <>と" "(空白)を取る
+        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        
+        var deviceTokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        println( deviceTokenString )
+        
+    }
+    
+    //something else from github
+    
+    func application( application: UIApplication!, didFailToRegisterForRemoteNotificationsWithError error: NSError! ) {
+        
+        println( error.localizedDescription )
     }
 
     func applicationWillResignActive(application: UIApplication) {

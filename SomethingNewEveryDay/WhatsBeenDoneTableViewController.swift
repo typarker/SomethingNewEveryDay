@@ -28,7 +28,6 @@ class WhatsBeenDoneTableViewController: UITableViewController {
                 // Do something with the found objects
                 for object in objects {
                     NSLog("%@", object.objectId)
-                    //let latitude = object["latitude"] as Double
                     self.dataParse.addObject(object)
                 }
             } else {
@@ -85,6 +84,32 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         let cellDataParse:PFObject = self.dataParse.objectAtIndex(indexPath.row) as PFObject
         
         cell.textLabel.text = cellDataParse.objectForKey("learned") as? String
+        var accomplished = cellDataParse.objectForKey("accomplished") as? Float
+        var a = "a"
+        if (accomplished >= 8 && accomplished < 10) {
+                a = "\u{1F60A}"
+            }
+            else if (accomplished >= 6 && accomplished < 8) {
+                a = "\u{1F603}"
+            }
+            else if (accomplished >= 4 && accomplished < 6) {
+                a = "\u{1F610}"
+            }
+            else if (accomplished >= 2 && accomplished < 4) {
+                a = "\u{1F60F}"
+            }
+            else if (accomplished < 2 && accomplished > 0) {
+                a = "\u{1f61E}"
+            }
+            else if (accomplished == 10) {
+                a = "\u{1f60B}"
+            }
+            else {
+                a = "\u{1f616}"
+            }
+
+        
+        cell.detailTextLabel!.text = a
         return cell
         
     }
@@ -104,6 +129,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             
             let selectedId = self.dataParse[indexPath.row].objectId
+            //println(self.dataParse[indexPath.row])
             var query = PFQuery(className:"SomethingNew")
             query.getObjectInBackgroundWithId(selectedId) {
                 (somethingNew: PFObject!, error: NSError!) -> Void in
@@ -139,14 +165,19 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        let viewController = segue.destinationViewController as DetailViewController
+        let indexPath = self.tableView.indexPathForSelectedRow()!
+        let object = self.dataParse.objectAtIndex(indexPath.row) as PFObject
+        viewController.object = object
+        
     }
-    */
+    
 
 }

@@ -11,11 +11,13 @@ import UIKit
 class SomthingNewViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var doText: UITextField!
     @IBOutlet weak var accomplishedBar: UISlider!
     @IBAction func submitButton(sender: UIButton) {
         //var user = PFUser.currentUser()
         var somethingNew = PFObject(className: "SomethingNew")
         somethingNew.setObject(self.textField.text, forKey: "learned")
+        somethingNew.setObject(self.doText.text, forKey: "did")
         somethingNew.setObject(1, forKey: "show")
         somethingNew.setObject(self.accomplishedBar.value, forKey: "accomplished")
         somethingNew.saveInBackgroundWithBlock {
