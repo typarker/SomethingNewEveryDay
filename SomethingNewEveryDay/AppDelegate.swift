@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
          Parse.setApplicationId("WR2NI87dRobP5rWGFM6SYODokuOotFP6cK3ITEnp", clientKey: "YOeXzOE2NgQeGXcdbcyNxo4gaGjtlKJrdikxuYOa")
         
-        // Push通知を許可する
+        // Push
         var types: UIUserNotificationType = UIUserNotificationType.Badge |
             UIUserNotificationType.Alert |
             UIUserNotificationType.Sound
