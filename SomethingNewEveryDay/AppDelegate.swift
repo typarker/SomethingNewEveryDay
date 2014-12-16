@@ -38,13 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application( application: UIApplication!, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData! ) {
         
         // <>と" "(空白)を取る
-        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        /*var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
         
         var deviceTokenString: String = ( deviceToken.description as NSString )
             .stringByTrimmingCharactersInSet( characterSet )
             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         
-        println( deviceTokenString )
+        println( deviceTokenString )*/
+        
+        //Store the deviceToken in the current installation and save it to Parse.
+        
+        let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackground()
+        
         
     }
     
