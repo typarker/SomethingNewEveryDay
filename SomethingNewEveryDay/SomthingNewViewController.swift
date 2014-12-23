@@ -11,6 +11,23 @@ import UIKit
 class SomthingNewViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var textField: UITextField!
     
+    @IBAction func push(sender: UIButton) {
+        let message: NSString = "Yo, Nigga!"
+        
+        var data = [ "title": "Some Title",
+            "alert": message]
+        
+        //var userQuery: PFQuery = PFUser.query()
+        //userQuery.whereKey("objectId", equalTo: recipientObjectId)
+        var query: PFQuery = PFInstallation.query()
+        //query.whereKey("currentUser", equalTo: userQuery)
+        query.whereKey("installationId", equalTo: "840c3705-1403-4a71-b0ab-4c544b9537cb")
+        
+        var push: PFPush = PFPush()
+        push.setQuery(query)
+        push.setData(data)
+        push.sendPushInBackground()
+    }
     @IBOutlet weak var doText: UITextField!
     @IBOutlet weak var accomplishedBar: UISlider!
     @IBAction func submitButton(sender: UIButton) {
