@@ -72,7 +72,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20998015867630304" green="0.90943339445334481" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="4bp-hf-Yzb" secondAttribute="centerX" id="0E2-nO-SbS"/>
                             <constraint firstItem="jpS-ay-P3t" firstAttribute="leading" secondItem="mEh-ev-p5e" secondAttribute="leadingMargin" constant="35" id="0Fq-1j-MvK"/>
@@ -133,6 +133,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="Eda-Mf-oex">
+                            <rect key="frame" x="-61" y="-14" width="375" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Recent"/>
+                                <segment title="Best"/>
+                            </segments>
+                            <connections>
+                                <action selector="sorter:" destination="ORf-Uf-eZl" eventType="valueChanged" id="KAf-HE-hgL"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="numberCell" textLabel="Vp3-Qv-N3n" detailTextLabel="dMI-pR-zYC" style="IBUITableViewCellStyleValue1" id="NqY-FS-gbm">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -163,10 +174,13 @@
                             <outlet property="delegate" destination="ORf-Uf-eZl" id="FBS-BO-BQT"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="sorter" destination="Eda-Mf-oex" id="mc6-NL-Tam"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfZ-EF-YQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5788" y="690"/>
+            <point key="canvasLocation" x="5815.5" y="678.5"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="sVd-Za-26K">

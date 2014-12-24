@@ -12,14 +12,34 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     
     
     var dataParse:NSMutableArray = NSMutableArray()
+    var sortBy:String = "createdAt"
     
-    
+    @IBOutlet weak var sorter: UISegmentedControl!
+    @IBAction func sorter(sender: UISegmentedControl) {
+        
+        switch sorter.selectedSegmentIndex
+        {
+        case 0:
+            sortBy = "createdAt";
+            self.loadData();
+        case 1:
+            sortBy = "accomplished";
+            self.loadData();
+            
+            
+        default:
+            break; 
+        }
+        
+        
+    }
+
     
     func loadData() {
         
         var query = PFQuery(className:"SomethingNew")
         query.whereKey("show", equalTo: 1)
-        query.orderByDescending("createdAt")
+        query.orderByDescending(self.sortBy)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
