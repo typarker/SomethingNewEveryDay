@@ -21,10 +21,10 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         {
         case 0:
             sortBy = "createdAt";
-            self.loadData();
+            sortData()
         case 1:
             sortBy = "accomplished";
-            self.loadData();
+            sortData()
             
             
         default:
@@ -32,6 +32,14 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         }
         
         
+    }
+    func sortData() {
+        var descriptor: NSSortDescriptor = NSSortDescriptor(key: sortBy, ascending: false)
+        var sortedResults: NSArray = dataParse.sortedArrayUsingDescriptors([descriptor])
+        
+        var mutableArr = NSMutableArray(array: sortedResults)
+        dataParse = mutableArr
+        self.tableView.reloadData()
     }
 
     
@@ -103,7 +111,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         
         let cellDataParse:PFObject = self.dataParse.objectAtIndex(indexPath.row) as PFObject
         
-        cell.textLabel.text = cellDataParse.objectForKey("learned") as? String
+        cell.textLabel!.text = cellDataParse.objectForKey("learned") as? String
         var accomplished = cellDataParse.objectForKey("accomplished") as? Float
         var a = "a"
         if (accomplished >= 8 && accomplished < 10) {
