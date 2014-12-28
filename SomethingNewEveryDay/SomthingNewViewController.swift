@@ -44,6 +44,9 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate{
             } else {
                 NSLog("%@", error)
             }
+        self.doText.text=""
+        self.textField.text=""
+        self.accomplishedBar.value=5
 
     }
     }

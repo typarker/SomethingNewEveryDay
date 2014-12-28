@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A00177351A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */; };
+		A029581B1A505F4A00203BB9 /* SomethingNewIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A029581A1A505F4A00203BB9 /* SomethingNewIcon.png */; };
 		A03E748A1A2D4AB00042461B /* SomthingNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */; };
 		A06B8B141A290F60003F3073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B8B131A290F60003F3073 /* AppDelegate.swift */; };
 		A06B8B171A290F60003F3073 /* SomethingNewEveryDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06B8B151A290F60003F3073 /* SomethingNewEveryDay.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsBeenDoneTableViewController.swift; sourceTree = "<group>"; };
+		A029581A1A505F4A00203BB9 /* SomethingNewIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SomethingNewIcon.png; sourceTree = "<group>"; };
 		A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomthingNewViewController.swift; sourceTree = "<group>"; };
 		A06B8B0E1A290F60003F3073 /* SomethingNewEveryDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomethingNewEveryDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06B8B121A290F60003F3073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A06B8B1C1A290F60003F3073 /* Main.storyboard */,
 				A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */,
 				A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */,
+				A029581A1A505F4A00203BB9 /* SomethingNewIcon.png */,
 				A06B8B1F1A290F60003F3073 /* Images.xcassets */,
 				A06B8B211A290F60003F3073 /* LaunchScreen.xib */,
 				A06B8B151A290F60003F3073 /* SomethingNewEveryDay.xcdatamodeld */,
@@ -263,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A029581B1A505F4A00203BB9 /* SomethingNewIcon.png in Resources */,
 				A06B8B1E1A290F60003F3073 /* Main.storyboard in Resources */,
 				A06B8B231A290F60003F3073 /* LaunchScreen.xib in Resources */,
 				A06B8B201A290F60003F3073 /* Images.xcassets in Resources */,
