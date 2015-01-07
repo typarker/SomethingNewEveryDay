@@ -32,6 +32,8 @@
 		A06B8B531A2916D9003F3073 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06B8B521A2916D9003F3073 /* SystemConfiguration.framework */; };
 		A06B8B561A2918E9003F3073 /* hopefulHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B8B551A2918E9003F3073 /* hopefulHeader.m */; };
 		A07F84F71A3BA9F70059B163 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F84F61A3BA9F70059B163 /* DetailViewController.swift */; };
+		A0E4FD831A5DBD41008AE432 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4FD821A5DBD41008AE432 /* Accounts.framework */; };
+		A0E4FD851A5DBD4C008AE432 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4FD841A5DBD4C008AE432 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		A06B8B541A2918E9003F3073 /* SomethingNewEveryDay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SomethingNewEveryDay-Bridging-Header.h"; sourceTree = "<group>"; };
 		A06B8B551A2918E9003F3073 /* hopefulHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hopefulHeader.m; sourceTree = "<group>"; };
 		A07F84F61A3BA9F70059B163 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
+		A0E4FD821A5DBD41008AE432 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		A0E4FD841A5DBD4C008AE432 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E4FD851A5DBD4C008AE432 /* Social.framework in Frameworks */,
+				A0E4FD831A5DBD41008AE432 /* Accounts.framework in Frameworks */,
 				A06B8B531A2916D9003F3073 /* SystemConfiguration.framework in Frameworks */,
 				A06B8B511A2916CD003F3073 /* StoreKit.framework in Frameworks */,
 				A06B8B4F1A2916C1003F3073 /* Security.framework in Frameworks */,
@@ -112,6 +118,8 @@
 		A06B8B051A290F60003F3073 = {
 			isa = PBXGroup;
 			children = (
+				A0E4FD841A5DBD4C008AE432 /* Social.framework */,
+				A0E4FD821A5DBD41008AE432 /* Accounts.framework */,
 				A06B8B521A2916D9003F3073 /* SystemConfiguration.framework */,
 				A06B8B501A2916CD003F3073 /* StoreKit.framework */,
 				A06B8B4E1A2916C1003F3073 /* Security.framework */,
@@ -238,6 +246,7 @@
 					};
 					A06B8B271A290F60003F3073 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = LWU6UTV638;
 						TestTargetID = A06B8B0D1A290F60003F3073;
 					};
 				};
@@ -351,8 +360,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iOS Development: Ty Parker (36V72JB435)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Ty Parker (36V72JB435)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ty Parker (36V72JB435)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ty Parker (36V72JB435)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -394,8 +403,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iOS Development: Ty Parker (36V72JB435)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Ty Parker (36V72JB435)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ty Parker (36V72JB435)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ty Parker (36V72JB435)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -418,8 +427,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iOS Development: Ty Parker (36V72JB435)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Ty Parker (36V72JB435)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ty Parker (36V72JB435)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ty Parker (36V72JB435)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -427,7 +436,7 @@
 				INFOPLIST_FILE = SomethingNewEveryDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67598489-114c-4049-aad5-9af665e3a704";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SomethingNewEveryDay/SomethingNewEveryDay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -438,8 +447,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iOS Development: Ty Parker (36V72JB435)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Ty Parker (36V72JB435)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ty Parker (36V72JB435)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ty Parker (36V72JB435)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -447,7 +456,7 @@
 				INFOPLIST_FILE = SomethingNewEveryDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67598489-114c-4049-aad5-9af665e3a704";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SomethingNewEveryDay/SomethingNewEveryDay-Bridging-Header.h";
 			};
 			name = Release;
@@ -456,6 +465,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -467,6 +478,7 @@
 				INFOPLIST_FILE = SomethingNewEveryDayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SomethingNewEveryDay.app/SomethingNewEveryDay";
 			};
 			name = Debug;
@@ -475,6 +487,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -482,6 +496,7 @@
 				INFOPLIST_FILE = SomethingNewEveryDayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SomethingNewEveryDay.app/SomethingNewEveryDay";
 			};
 			name = Release;

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SomthingNewViewController: UIViewController, UITextFieldDelegate{
+class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate{
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func push(sender: UIButton) {
@@ -64,6 +64,21 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate{
 
         // Do any additional setup after loading the view.
         textField.delegate = self
+        //Parse Login
+        
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {   // is user already signed in
+            // Do stuff with the user
+            
+        } else {
+            // Show the signup or login screen
+            var logInController = PFLogInViewController()
+            logInController.delegate = self
+            self.presentViewController(logInController, animated:true, completion: nil)
+            
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {
