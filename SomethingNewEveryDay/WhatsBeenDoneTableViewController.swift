@@ -161,8 +161,9 @@ class WhatsBeenDoneTableViewController: UITableViewController {
             return
         })
         
-        deleteButton.backgroundColor = UIColor.blackColor()
+        deleteButton.backgroundColor = UIColor.grayColor()
         deleteButton.title = "Forget"
+
         
         return [deleteButton]
     }

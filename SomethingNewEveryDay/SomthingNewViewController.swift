@@ -80,6 +80,25 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
 
         
     }
+    
+    //Dismiss Login View Controller after Login
+    
+    func logInViewController(controller: PFLogInViewController, didLogInUser user: PFUser) -> Void {
+        self.dismissViewControllerAnimated(true, completion: nil)
+  
+        
+        //matching user to device
+        let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+        var user = PFUser.currentUser()
+        currentInstallation.setObject(user, forKey: "user")
+        currentInstallation.saveInBackground()
+    }
+    
+    func logInViewControllerDidCancelLogIn(controller: PFLogInViewController) -> Void {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
