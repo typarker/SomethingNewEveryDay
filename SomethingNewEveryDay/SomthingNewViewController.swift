@@ -74,7 +74,10 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
             // Show the signup or login screen
             var logInController = PFLogInViewController()
             logInController.delegate = self
+            logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
             self.presentViewController(logInController, animated:true, completion: nil)
+            
+        
             
         }
 

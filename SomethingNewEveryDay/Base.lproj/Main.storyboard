@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oz7-AQ-kXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oz7-AQ-kXu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -229,7 +229,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDy-5o-qLQ">
-                                <rect key="frame" x="154" y="135" width="36" height="20.5"/>
+                                <rect key="frame" x="169" y="150" width="36" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -243,6 +243,7 @@
                             <constraint firstAttribute="centerX" secondItem="vC3-wc-t3K" secondAttribute="centerX" id="YAX-2T-7z1"/>
                             <constraint firstItem="vC3-wc-t3K" firstAttribute="leading" secondItem="3jH-HN-tpx" secondAttribute="leadingMargin" id="ZAE-HI-tjw"/>
                             <constraint firstItem="QYJ-R5-A2Y" firstAttribute="leading" secondItem="3jH-HN-tpx" secondAttribute="leadingMargin" id="aXE-Fs-QB3"/>
+                            <constraint firstAttribute="centerX" secondItem="EDy-5o-qLQ" secondAttribute="centerX" constant="0.5" id="btN-vJ-e6w"/>
                             <constraint firstAttribute="centerX" secondItem="EDy-5o-qLQ" secondAttribute="centerX" constant="15.5" id="chf-rc-ImD"/>
                             <constraint firstItem="vC3-wc-t3K" firstAttribute="top" secondItem="gBD-ha-NE0" secondAttribute="bottom" constant="8" id="fzU-Lf-qaN"/>
                             <constraint firstItem="bSk-LA-YqW" firstAttribute="top" secondItem="EDy-5o-qLQ" secondAttribute="bottom" constant="55" id="gmp-fe-5We"/>

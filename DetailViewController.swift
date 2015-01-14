@@ -22,8 +22,18 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
        youDid.text = object.objectForKey("did") as? String
         youLearned.text = object.objectForKey("learned") as? String
-        date.text = object.objectForKey("createdAt") as? String
+        //date.text = object.objectForKey("createdAt") as? String
+        
+        
+        var dateUpdated = object.updatedAt as NSDate
+        var dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "EEE, MMM d, h:mm a"
+        date.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated))
         // Do any additional setup after loading the view.
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
