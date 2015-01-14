@@ -113,6 +113,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="e2s-gg-awi">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="Idx-bS-YbD">
+                            <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logOut:" destination="cBO-1q-FEK" id="SJu-Qq-bad"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="What I've Learned" id="gpe-Kl-Mzq">
                             <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>

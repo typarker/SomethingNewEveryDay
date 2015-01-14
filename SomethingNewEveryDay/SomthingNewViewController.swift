@@ -10,6 +10,14 @@ import UIKit
 
 class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate{
     @IBOutlet weak var textField: UITextField!
+    @IBAction func logOut(sender: UIBarButtonItem) {
+        // Log Out User
+        PFUser.logOut()
+        // Show the signup or login screen
+        var logInController = PFLogInViewController()
+        logInController.delegate = self
+        logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
+        self.presentViewController(logInController, animated:true, completion: nil)    }
     
     @IBAction func push(sender: UIButton) {
         let message: NSString = "Yo, Nigga!"

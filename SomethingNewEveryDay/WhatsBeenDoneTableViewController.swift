@@ -46,6 +46,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     func loadData() {
         
         var query = PFQuery(className:"SomethingNew")
+        //query.whereKey("user", equalTo: PFUser.currentUser())
         query.whereKey("show", equalTo: 1)
         query.orderByDescending(self.sortBy)
         query.findObjectsInBackgroundWithBlock {
