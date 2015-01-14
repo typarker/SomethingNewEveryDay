@@ -257,6 +257,11 @@
                             <constraint firstItem="QYJ-R5-A2Y" firstAttribute="top" secondItem="bSk-LA-YqW" secondAttribute="bottom" constant="8" id="rOS-65-Edi"/>
                             <constraint firstAttribute="centerX" secondItem="bSk-LA-YqW" secondAttribute="centerX" id="sYn-8j-3Ur"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="chf-rc-ImD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="date" destination="EDy-5o-qLQ" id="FdQ-nO-Pe5"/>

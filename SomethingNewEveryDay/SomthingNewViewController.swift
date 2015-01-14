@@ -8,16 +8,35 @@
 
 import UIKit
 
-class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate{
+class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate{
+    
     @IBOutlet weak var textField: UITextField!
+    
     @IBAction func logOut(sender: UIBarButtonItem) {
         // Log Out User
         PFUser.logOut()
         // Show the signup or login screen
         var logInController = PFLogInViewController()
+        var signUpController = PFSignUpViewController()
+        
+        //let users sign up with email only
+        
+        
+        logInController.signUpController = signUpController
+        
+        logInController.signUpController.delegate = self
         logInController.delegate = self
         logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
-        self.presentViewController(logInController, animated:true, completion: nil)    }
+        
+        logInController.signUpController.fields = PFSignUpFields.UsernameAndPassword
+            | PFSignUpFields.SignUpButton
+            | PFSignUpFields.DismissButton
+        self.presentViewController(logInController, animated:true, completion: nil)
+        //self.presentViewController(signUpController, animated:true, completion: nil)
+    
+        
+    }
+    
     @IBAction func tap(sender: UITapGestureRecognizer) {
         self.view.endEditing(true);
         println("tapped")
@@ -90,10 +109,24 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
             
         } else {
             // Show the signup or login screen
+        
             var logInController = PFLogInViewController()
+            var signUpController = PFSignUpViewController()
+            
+            //let users sign up with email only
+            
+          
+            logInController.signUpController = signUpController
+            
+            logInController.signUpController.delegate = self
             logInController.delegate = self
             logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
+            
+            logInController.signUpController.fields = PFSignUpFields.UsernameAndPassword
+                | PFSignUpFields.SignUpButton
+                | PFSignUpFields.DismissButton
             self.presentViewController(logInController, animated:true, completion: nil)
+            //self.presentViewController(signUpController, animated:true, completion: nil)
             
         
             

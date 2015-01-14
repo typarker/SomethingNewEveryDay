@@ -183,8 +183,8 @@ class WhatsBeenDoneTableViewController: UITableViewController {
                     NSLog("%@", error)
                 }
                 else {
-                    //somethingNew.incrementKey("show", byAmount: -1)
-                    somethingNew.ACL = PFACL(user: PFUser.currentUser())
+                    somethingNew.incrementKey("show", byAmount: -1)
+                    //somethingNew.ACL = PFACL(user: PFUser.currentUser())
                     somethingNew.saveInBackground()
                 }
             }

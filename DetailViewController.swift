@@ -25,10 +25,10 @@ class DetailViewController: UIViewController {
         //date.text = object.objectForKey("createdAt") as? String
         
         
-        var dateUpdated = object.updatedAt as NSDate
+        var dateCreated = object.createdAt as NSDate
         var dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "EEE, MMM d, h:mm a"
-        date.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated))
+        date.text = NSString(format: "%@", dateFormat.stringFromDate(dateCreated))
         // Do any additional setup after loading the view.
         
         
