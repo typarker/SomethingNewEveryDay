@@ -18,6 +18,10 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
         logInController.delegate = self
         logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
         self.presentViewController(logInController, animated:true, completion: nil)    }
+    @IBAction func tap(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true);
+        println("tapped")
+    }
     
     @IBAction func push(sender: UIButton) {
         let message: NSString = "Yo, Nigga!"
@@ -69,8 +73,11 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
     }
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
 
         // Do any additional setup after loading the view.

@@ -68,6 +68,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="4bp-hf-Yzb" secondAttribute="centerX" id="0E2-nO-SbS"/>
                             <constraint firstItem="jpS-ay-P3t" firstAttribute="leading" secondItem="mEh-ev-p5e" secondAttribute="leadingMargin" constant="35" id="0Fq-1j-MvK"/>
@@ -101,6 +102,9 @@
                                 <exclude reference="hhZ-o4-y7j"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="doP-HH-KBA" appends="YES" id="66o-I1-6mG"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="e2s-gg-awi">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="Idx-bS-YbD">
@@ -124,6 +128,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yl9-ig-wHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="doP-HH-KBA">
+                    <connections>
+                        <action selector="tap:" destination="cBO-1q-FEK" id="gPd-yh-vmB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5208.5" y="723.5"/>
         </scene>
