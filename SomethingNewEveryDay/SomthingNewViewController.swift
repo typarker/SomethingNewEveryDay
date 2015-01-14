@@ -45,6 +45,9 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
         somethingNew.setObject(self.doText.text, forKey: "did")
         somethingNew.setObject(1, forKey: "show")
         somethingNew.setObject(self.accomplishedBar.value, forKey: "accomplished")
+        
+        somethingNew.ACL = PFACL(user: PFUser.currentUser())
+        
         somethingNew.saveInBackgroundWithBlock {
             (success: Bool!, error: NSError!) -> Void in
             if true {
@@ -54,7 +57,7 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
             }
         self.doText.text=""
         self.textField.text=""
-        self.accomplishedBar.value=5
+        self.accomplishedBar.value = 0
 
     }
     }

@@ -112,6 +112,7 @@ class WhatsBeenDoneTableViewController: UITableViewController {
         
         let cellDataParse:PFObject = self.dataParse.objectAtIndex(indexPath.row) as PFObject
         
+    
         cell.textLabel!.text = cellDataParse.objectForKey("learned") as? String
         var accomplished = cellDataParse.objectForKey("accomplished") as? Float
         var a = "a"
@@ -182,7 +183,8 @@ class WhatsBeenDoneTableViewController: UITableViewController {
                     NSLog("%@", error)
                 }
                 else {
-                    somethingNew.incrementKey("show", byAmount: -1)
+                    //somethingNew.incrementKey("show", byAmount: -1)
+                    somethingNew.ACL = PFACL(user: PFUser.currentUser())
                     somethingNew.saveInBackground()
                 }
             }
