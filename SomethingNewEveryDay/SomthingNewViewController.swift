@@ -13,7 +13,15 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func logOut(sender: UIBarButtonItem) {
-        // Log Out User
+        var alert = UIAlertController(title: "Are you sure?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Default, handler: { action in self.logout()}))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:  nil))
+            presentViewController(alert, animated: true, completion: nil)
+    }
+    
+        func logout() {
+            // Log Out User
         PFUser.logOut()
         // Show the signup or login screen
         var logInController = PFLogInViewController()
