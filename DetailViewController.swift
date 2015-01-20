@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var youLearned: UILabel!
     @IBOutlet var object: PFObject!
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
