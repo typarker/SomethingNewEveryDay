@@ -33,15 +33,15 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
         //let users sign up with email only
         
         
-        logInController.signUpController = signUpController
-        
-        logInController.signUpController.delegate = self
+//        logInController.signUpController = signUpController
+//        
+//        logInController.signUpController.delegate = self
         logInController.delegate = self
-        logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
-        
-        logInController.signUpController.fields = PFSignUpFields.UsernameAndPassword
-            | PFSignUpFields.SignUpButton
-            | PFSignUpFields.DismissButton
+//        logInController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
+//        
+//        logInController.signUpController.fields = PFSignUpFields.UsernameAndPassword
+//            | PFSignUpFields.SignUpButton
+//            | PFSignUpFields.DismissButton
         self.presentViewController(logInController, animated:true, completion: nil)
         //self.presentViewController(signUpController, animated:true, completion: nil)
     
