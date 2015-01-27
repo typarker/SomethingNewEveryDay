@@ -113,10 +113,7 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
     override func viewDidLoad() {
         super.viewDidLoad()
       
-//        youDid.layer.cornerRadius = 5
-//        youDid.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
-//        youDid.layer.borderWidth = 0.5
-//        youDid.clipsToBounds = true
+
         // Do any additional setup after loading the view.
         textField.delegate = self
         //Parse Login
@@ -246,7 +243,7 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
     
     var activeField: UITextView?
     
-    func textViewDidBeginEditing(sender: UITextView) {
+    func textViewDidBeginEditing(sender: RoundedTextView) {
         activeField = sender
        
     }
@@ -255,7 +252,7 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardOnScreen:", name: UIKeyboardDidShowNotification, object: nil)
+        center.addObserver(self, selector: "keyboardOnScreen:", name: UIKeyboardDidChangeFrameNotification, object: nil)
         center.addObserver(self, selector: "keyboardOffScreen:", name: UIKeyboardDidHideNotification, object: nil)
     }
     
@@ -268,10 +265,10 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
         var aRect: CGRect = self.view.frame
         aRect.size.height -= kbSize!.height
         //you may not need to scroll, see if the active field is already visible
-        if (!CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
+        //if (!CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
             let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height)
             scrollView.setContentOffset(scrollPoint, animated: true)
-        }
+        //}
         
     }
     
