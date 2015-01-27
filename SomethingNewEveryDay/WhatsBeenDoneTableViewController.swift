@@ -108,39 +108,74 @@ class WhatsBeenDoneTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("numberCell") as UITableViewCell
+//        var cell = tableView.dequeueReusableCellWithIdentifier("numberCell") as UITableViewCell
+//        
+//        let cellDataParse:PFObject = self.dataParse.objectAtIndex(indexPath.row) as PFObject
+//        
+//    
+//        cell.textLabel!.text = cellDataParse.objectForKey("learned") as? String
+//        var accomplished = cellDataParse.objectForKey("accomplished") as? Float
+//        var a = "a"
+//        if (accomplished >= 8 && accomplished < 10) {
+//                a = "\u{1F60A}"
+//            }
+//            else if (accomplished >= 6 && accomplished < 8) {
+//                a = "\u{1F603}"
+//            }
+//            else if (accomplished >= 4 && accomplished < 6) {
+//                a = "\u{1F610}"
+//            }
+//            else if (accomplished >= 2 && accomplished < 4) {
+//                a = "\u{1F60F}"
+//            }
+//            else if (accomplished < 2 && accomplished > 0) {
+//                a = "\u{1f61E}"
+//            }
+//            else if (accomplished == 10) {
+//                a = "\u{1f60B}"
+//            }
+//            else {
+//                a = "\u{1f616}"
+//            }
+//
+//        
+//        cell.detailTextLabel!.text = a
+//        return cell
         
-        let cellDataParse:PFObject = self.dataParse.objectAtIndex(indexPath.row) as PFObject
+                var cell = tableView.dequeueReusableCellWithIdentifier("newCell") as SmileyTableViewCell
         
-    
-        cell.textLabel!.text = cellDataParse.objectForKey("learned") as? String
-        var accomplished = cellDataParse.objectForKey("accomplished") as? Float
-        var a = "a"
-        if (accomplished >= 8 && accomplished < 10) {
-                a = "\u{1F60A}"
-            }
-            else if (accomplished >= 6 && accomplished < 8) {
-                a = "\u{1F603}"
-            }
-            else if (accomplished >= 4 && accomplished < 6) {
-                a = "\u{1F610}"
-            }
-            else if (accomplished >= 2 && accomplished < 4) {
-                a = "\u{1F60F}"
-            }
-            else if (accomplished < 2 && accomplished > 0) {
-                a = "\u{1f61E}"
-            }
-            else if (accomplished == 10) {
-                a = "\u{1f60B}"
-            }
-            else {
-                a = "\u{1f616}"
-            }
+                let cellDataParse:PFObject = self.dataParse.objectAtIndex(indexPath.row) as PFObject
+        
+        
+                cell.cellTitle?.text = cellDataParse.objectForKey("learned") as? String
+                var accomplished = cellDataParse.objectForKey("accomplished") as? Float
+                var a = "a"
+                if (accomplished >= 8 && accomplished < 10) {
+                        a = "\u{1F60A}"
+                    }
+                    else if (accomplished >= 6 && accomplished < 8) {
+                        a = "\u{1F603}"
+                    }
+                    else if (accomplished >= 4 && accomplished < 6) {
+                        a = "\u{1F610}"
+                    }
+                    else if (accomplished >= 2 && accomplished < 4) {
+                        a = "\u{1F60F}"
+                    }
+                    else if (accomplished < 2 && accomplished > 0) {
+                        a = "\u{1f61E}"
+                    }
+                    else if (accomplished == 10) {
+                        a = "\u{1f60B}"
+                    }
+                    else {
+                        a = "\u{1f616}"
+                    }
+        
+                
+                cell.cellDetail?.text = a
+                return cell
 
-        
-        cell.detailTextLabel!.text = a
-        return cell
         
     }
 

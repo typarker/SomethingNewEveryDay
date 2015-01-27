@@ -11,7 +11,7 @@ import QuartzCore
 
 class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate{
     
-    @IBOutlet weak var youDid: UITextView! = UITextView()
+    //@IBOutlet weak var youDid: UITextView! = UITextView()
     @IBOutlet weak var textField: UITextField!
     
     
@@ -76,8 +76,8 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
         //var user = PFUser.currentUser()
         var somethingNew = PFObject(className: "SomethingNew")
         somethingNew.setObject(self.textField.text, forKey: "learned")
-//        somethingNew.setObject(self.doText.text, forKey: "did")
-        somethingNew.setObject(self.youDid.text, forKey: "did")
+        somethingNew.setObject(self.doText.text, forKey: "did")
+        //somethingNew.setObject(self.youDid.text, forKey: "did")
         somethingNew.setObject(1, forKey: "show")
         somethingNew.setObject(self.accomplishedBar.value, forKey: "accomplished")
         
@@ -90,7 +90,7 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
             } else {
                 NSLog("%@", error)
             }
-        self.youDid.text=""
+        //self.youDid.text=""
         self.doText.text=""
         self.textField.text=""
         self.accomplishedBar.value = 0
@@ -110,10 +110,10 @@ class SomthingNewViewController: UIViewController, UITextFieldDelegate, PFLogInV
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        youDid.layer.cornerRadius = 5
-        youDid.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
-        youDid.layer.borderWidth = 0.5
-        youDid.clipsToBounds = true
+//        youDid.layer.cornerRadius = 5
+//        youDid.layer.borderColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
+//        youDid.layer.borderWidth = 0.5
+//        youDid.clipsToBounds = true
         // Do any additional setup after loading the view.
         textField.delegate = self
         //Parse Login

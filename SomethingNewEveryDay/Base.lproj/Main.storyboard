@@ -65,12 +65,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="textView" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-kk-4JW">
-                                <rect key="frame" x="68" y="155" width="240" height="85"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -128,9 +122,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="accomplishedBar" destination="81M-bK-NOE" id="nFi-7R-R8W"/>
-                        <outlet property="doText" destination="jpS-ay-P3t" id="VaY-aq-mP6"/>
+                        <outlet property="doText" destination="jpS-ay-P3t" id="RJK-Zq-HJd"/>
                         <outlet property="textField" destination="gJA-02-iX3" id="Hw7-rO-Q7D"/>
-                        <outlet property="youDid" destination="X3D-kk-4JW" id="iyI-L5-FZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yl9-ig-wHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -187,6 +180,43 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="Cvm-qP-FHq" kind="show" id="nqf-XS-mpc"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newCell" id="a46-b0-efO" customClass="SmileyTableViewCell" customModule="SomethingNewEveryDay" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a46-b0-efO" id="xZz-Fp-WG8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="cellTitle" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66a-xR-xRz">
+                                            <rect key="frame" x="8" y="11" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i7-lx-mKI">
+                                            <rect key="frame" x="325" y="11" width="42" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="2WG-7h-BTf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2i7-lx-mKI" secondAttribute="trailing" id="LMs-74-AWm"/>
+                                        <constraint firstAttribute="centerY" secondItem="2i7-lx-mKI" secondAttribute="centerY" id="PaX-LU-VuR"/>
+                                        <constraint firstItem="2i7-lx-mKI" firstAttribute="leading" secondItem="66a-xR-xRz" secondAttribute="trailing" id="V01-j5-azU"/>
+                                        <constraint firstItem="66a-xR-xRz" firstAttribute="leading" secondItem="xZz-Fp-WG8" secondAttribute="leadingMargin" id="mbl-tS-EId"/>
+                                        <constraint firstAttribute="centerY" secondItem="66a-xR-xRz" secondAttribute="centerY" id="o6L-KU-maz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellDetail" destination="2i7-lx-mKI" id="Rrk-qG-0ci"/>
+                                    <outlet property="cellTitle" destination="66a-xR-xRz" id="mPh-ad-cHo"/>
+                                    <segue destination="Cvm-qP-FHq" kind="show" id="Dvs-Jp-NE3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -363,5 +393,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vzc-Zd-6px"/>
+        <segue reference="nqf-XS-mpc"/>
     </inferredMetricsTieBreakers>
 </document>

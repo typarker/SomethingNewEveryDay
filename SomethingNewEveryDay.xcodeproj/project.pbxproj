@@ -32,6 +32,7 @@
 		A06B8B531A2916D9003F3073 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06B8B521A2916D9003F3073 /* SystemConfiguration.framework */; };
 		A06B8B561A2918E9003F3073 /* hopefulHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B8B551A2918E9003F3073 /* hopefulHeader.m */; };
 		A07F84F71A3BA9F70059B163 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F84F61A3BA9F70059B163 /* DetailViewController.swift */; };
+		A0BEADA91A771EC1009350E3 /* SmileyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BEADA81A771EC1009350E3 /* SmileyTableViewCell.swift */; };
 		A0E4FD831A5DBD41008AE432 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4FD821A5DBD41008AE432 /* Accounts.framework */; };
 		A0E4FD851A5DBD4C008AE432 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4FD841A5DBD4C008AE432 /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		A06B8B541A2918E9003F3073 /* SomethingNewEveryDay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SomethingNewEveryDay-Bridging-Header.h"; sourceTree = "<group>"; };
 		A06B8B551A2918E9003F3073 /* hopefulHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hopefulHeader.m; sourceTree = "<group>"; };
 		A07F84F61A3BA9F70059B163 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
+		A0BEADA81A771EC1009350E3 /* SmileyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmileyTableViewCell.swift; sourceTree = "<group>"; };
 		A0E4FD821A5DBD41008AE432 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		A0E4FD841A5DBD4C008AE432 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				A07F84F61A3BA9F70059B163 /* DetailViewController.swift */,
 				A06B8B551A2918E9003F3073 /* hopefulHeader.m */,
 				A06B8B1C1A290F60003F3073 /* Main.storyboard */,
+				A0BEADA81A771EC1009350E3 /* SmileyTableViewCell.swift */,
 				A00177341A328D2E00369A23 /* WhatsBeenDoneTableViewController.swift */,
 				A03E74891A2D4AB00042461B /* SomthingNewViewController.swift */,
 				A029581A1A505F4A00203BB9 /* SomethingNewIcon.png */,
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07F84F71A3BA9F70059B163 /* DetailViewController.swift in Sources */,
+				A0BEADA91A771EC1009350E3 /* SmileyTableViewCell.swift in Sources */,
 				A06B8B171A290F60003F3073 /* SomethingNewEveryDay.xcdatamodeld in Sources */,
 				A06B8B141A290F60003F3073 /* AppDelegate.swift in Sources */,
 				A03E748A1A2D4AB00042461B /* SomthingNewViewController.swift in Sources */,
@@ -427,8 +431,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ty Parker (36V72JB435)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ty Parker (36V72JB435)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -447,8 +451,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ty Parker (36V72JB435)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ty Parker (36V72JB435)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
