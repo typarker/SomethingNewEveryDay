@@ -198,13 +198,13 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
         let contentInsets:UIEdgeInsets  = UIEdgeInsetsMake(0.0, 0.0, kbSize!.height, 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
-//        var aRect: CGRect = self.view.frame
-//        aRect.size.height = kbSize!.height
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize!.height
         //you may not need to scroll, see if the active field is already visible
-        //if (!CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
+        if (CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
             let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height + 20 + activeField!.frame.height)
             scrollView.setContentOffset(scrollPoint, animated: true)
-        //}
+        }
         
     }
     
