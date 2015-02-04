@@ -116,6 +116,7 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
 
         // Do any additional setup after loading the view.
         textField.delegate = self
+        doText.delegate = self
         //Parse Login
         
         var currentUser = PFUser.currentUser()
@@ -176,74 +177,9 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
     
     
     
-    
-//    func registerForKeyboardNotifications ()-> Void   {
-//        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
-//        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
-//        
-//        
-//    }
-//    
-//    func deregisterFromKeyboardNotifications () -> Void {
-//        let center:  NSNotificationCenter = NSNotificationCenter.defaultCenter()
-//        center.removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
-//        center.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-//        
-//        
-//    }
-//    
-//    
-//    func keyboardWasShown (notification: NSNotification) {
-//        
-//        let info : NSDictionary = notification.userInfo!
-//        
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-//            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-//            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0, keyboardSize.height, 0)
-//            
-//            self.scrollView.contentInset = insets
-//            self.scrollView.scrollIndicatorInsets = insets
-//            var frame = self.textField.frame
-//            var frameDo = self.doText.frame
-//            var aRect: CGRect = self.view.frame
-//            aRect.size.height -= keyboardSize!.height
-//            if (!CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
-//                let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height)
-//                scrollView.setContentOffset(scrollPoint, animated: true)
-//            }
-//            
-////            self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y + keyboardSize.height)
-//        }
-//        
-//        
-//        
-//    }
-//    
-//    func keyboardWillBeHidden (notification: NSNotification) {
-//        
-//        let info : NSDictionary = notification.userInfo!
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-//            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-//            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0, keyboardSize.height, 0)
-//            
-//            self.scrollView.contentInset = insets
-//            self.scrollView.scrollIndicatorInsets = insets
-//            
-//            self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y - keyboardSize.height)
-//        }
-//        
-//        
-//
-//        
-//        
-//        
-//    }
-    
     var activeField: UITextView?
     
-    func textViewDidBeginEditing(sender: RoundedTextView) {
+    func textViewDidBeginEditing(sender: UITextView) {
         activeField = sender
        
     }
@@ -262,11 +198,11 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
         let contentInsets:UIEdgeInsets  = UIEdgeInsetsMake(0.0, 0.0, kbSize!.height, 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
-        var aRect: CGRect = self.view.frame
-        aRect.size.height -= kbSize!.height
+//        var aRect: CGRect = self.view.frame
+//        aRect.size.height = kbSize!.height
         //you may not need to scroll, see if the active field is already visible
         //if (!CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
-            let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height)
+            let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height + 20 + activeField!.frame.height)
             scrollView.setContentOffset(scrollPoint, animated: true)
         //}
         
