@@ -177,24 +177,12 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
     
     
     
-    var activeField: UITextView?
+    var activeField: UITextView!
+    var kbSize = CGSize(width: 0, height: 0) as CGSize?
     
     func textViewDidBeginEditing(sender: UITextView) {
         activeField = sender
-       
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardOnScreen:", name: UIKeyboardDidChangeFrameNotification, object: nil)
-        center.addObserver(self, selector: "keyboardOffScreen:", name: UIKeyboardDidHideNotification, object: nil)
-    }
-    
-    func keyboardOnScreen(notification: NSNotification){
-        let info: NSDictionary  = notification.userInfo!
-        let kbSize = info.valueForKey(UIKeyboardFrameEndUserInfoKey)?.CGRectValue().size
+        
         let contentInsets:UIEdgeInsets  = UIEdgeInsetsMake(0.0, 0.0, kbSize!.height, 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
@@ -204,6 +192,35 @@ class SomthingNewViewController: UIViewController, UITextViewDelegate, PFLogInVi
         if (CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
             let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height + 20 + activeField!.frame.height)
             scrollView.setContentOffset(scrollPoint, animated: true)
+        }
+
+       
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "keyboardOnScreen:", name: UIKeyboardDidChangeFrameNotification, object: nil)
+        center.addObserver(self, selector: "keyboardOffScreen:", name: UIKeyboardDidHideNotification, object: nil)
+        //center.addObserver(self, selector: "keyboardOnScreen:", name: UITextViewTextDidBeginEditingNotification, object: nil)
+    }
+    
+    
+    func keyboardOnScreen(notification: NSNotification){
+        if activeField != nil {
+        let info: NSDictionary  = notification.userInfo!
+        kbSize = info.valueForKey(UIKeyboardFrameEndUserInfoKey)?.CGRectValue().size
+        let contentInsets:UIEdgeInsets  = UIEdgeInsetsMake(0.0, 0.0, kbSize!.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize!.height
+        //you may not need to scroll, see if the active field is already visible
+        if (CGRectContainsPoint(aRect, activeField!.frame.origin) ) {
+            let scrollPoint:CGPoint = CGPointMake(0.0, activeField!.frame.origin.y - kbSize!.height + 20 + activeField!.frame.height)
+            scrollView.setContentOffset(scrollPoint, animated: true)
+        }
         }
         
     }
